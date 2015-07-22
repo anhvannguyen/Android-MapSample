@@ -66,7 +66,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         mMapReady = true;
         mGoogleMap = googleMap;
         // Set the lat/long coordinates for the United States
-        LatLng unitedStates = new LatLng(39.320401, -98.521445);
+        LatLng unitedStates = Utility.UNITED_STATES_COORD;
         // Set up the camera position
         CameraPosition target = CameraPosition.builder()
                 .target(unitedStates)
