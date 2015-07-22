@@ -13,6 +13,7 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 
 public class MainActivity extends ActionBarActivity implements OnMapReadyCallback {
@@ -72,6 +73,10 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                 .target(unitedStates)
                 .zoom(3)
                 .build();
+        // Add Bay Area Fry's Electronics store location
+        for (MarkerOptions frysMarker : Utility.getFrysMarker()) {
+            mGoogleMap.addMarker(frysMarker);
+        }
         // Set up the initial map view type
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         // Move the camera to the camera position
@@ -98,5 +103,10 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void flyTo(CameraPosition target)
+    {
+        mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
     }
 }
