@@ -11,6 +11,8 @@ import java.util.ArrayList;
  * Created by anhvannguyen on 7/22/15.
  */
 public final class Utility {
+    public static final int FLYBY_DURATION = 10000;
+
     public static final LatLng UNITED_STATES_COORD = new LatLng(39.320401, -98.521445);
     public static final LatLng LONDON_UK_COORD = new LatLng(51.504800, -0.127320);
     public static final LatLng TOYKO_JAPAN_COORD = new LatLng(35.6895,139.6917);
@@ -47,6 +49,12 @@ public final class Utility {
             .tilt(45)
             .build();
 
+    public static final CameraPosition GOOGLEPLEX_CAMERA = CameraPosition.builder()
+            .target(GOOGLEPLEX_COORD)
+            .zoom(16.0f)
+            .bearing(90)
+            .tilt(45)
+            .build();
 
     public static ArrayList<MarkerOptions> getFrysMarker() {
         ArrayList<MarkerOptions> frysMarkerList = new ArrayList<MarkerOptions>();
