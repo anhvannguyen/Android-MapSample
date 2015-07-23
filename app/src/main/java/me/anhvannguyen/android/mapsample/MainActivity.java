@@ -20,6 +20,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     private Button mMapButton;
     private Button mSatelliteButton;
     private Button mHybridButton;
+    private Button mGooglePlexButton;
     private GoogleMap mGoogleMap;
     private boolean mMapReady = false;
     private MapFragment mMapFragment;
@@ -54,6 +55,16 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             public void onClick(View v) {
                 if (mMapReady) {
                     mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                }
+            }
+        });
+
+        mGooglePlexButton = (Button) findViewById(R.id.google_flyto_button);
+        mGooglePlexButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (mMapReady) {
+                    flyTo(Utility.GOOGLEPLEX_CAMERA);
                 }
             }
         });
@@ -109,6 +120,6 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
 
     private void flyTo(CameraPosition target)
     {
-        mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(target), Utility.FLYBY_DURATION, null);
     }
 }
