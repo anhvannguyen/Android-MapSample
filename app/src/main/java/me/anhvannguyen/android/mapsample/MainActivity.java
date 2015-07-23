@@ -77,6 +77,8 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         for (MarkerOptions frysMarker : Utility.getFrysMarker()) {
             mGoogleMap.addMarker(frysMarker);
         }
+        // Add Google HQ marker with launcher icon
+        mGoogleMap.addMarker(Utility.getGooglePlexMarker());
         // Set up the initial map view type
         mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
         // Move the camera to the camera position

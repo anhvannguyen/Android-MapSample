@@ -1,5 +1,6 @@
 package me.anhvannguyen.android.mapsample;
 
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -20,6 +21,8 @@ public final class Utility {
     public static final LatLng FRYS_PALO_ALTO = new LatLng(37.424605,-122.136941);
     public static final LatLng FRYS_SAN_JOSE = new LatLng(37.381411,-121.908975);
     public static final LatLng FRYS_SUNNYVALE = new LatLng(37.382093,-122.001715);
+
+    public static final LatLng GOOGLEPLEX_COORD = new LatLng(37.411413,-122.0708163);
 
 
     public static final CameraPosition SAN_JOSE_CAMERA = CameraPosition.builder()
@@ -81,5 +84,12 @@ public final class Utility {
         frysMarkerList.add(frysSunnyvale);
 
         return frysMarkerList;
+    }
+
+    public static MarkerOptions getGooglePlexMarker() {
+        return new MarkerOptions()
+                .position(GOOGLEPLEX_COORD)
+                .title("Google Plex")
+                .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
     }
 }
