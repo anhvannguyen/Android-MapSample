@@ -97,7 +97,7 @@ public final class Utility {
     public static MarkerOptions getGooglePlexMarker() {
         return new MarkerOptions()
                 .position(GOOGLEPLEX_COORD)
-                .title("Google Plex")
+                .title("Googleplex")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
     }
 }
