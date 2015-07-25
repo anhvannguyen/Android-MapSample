@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+
+    <!-- Button text labels -->
+    <string name="map_button_label">Map</string>
+    <string name="satellite_button_label">Satellite</string>
+    <string name="hybrid_button_label">Hybrid</string>
+    <string name="center_google_button_label">Center on Google Plex</string>
+
 </resources>
