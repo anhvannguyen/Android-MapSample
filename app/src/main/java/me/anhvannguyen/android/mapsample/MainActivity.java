@@ -23,6 +23,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     private Button mGooglePlexButton;
     private GoogleMap mGoogleMap;
     private boolean mMapReady = false;
+    private boolean initMap = false;
     private MapFragment mMapFragment;
 
     @Override
@@ -70,6 +71,9 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         });
 
         mMapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+        if (savedInstanceState == null) {
+            initMap = true;
+        }
         mMapFragment.getMapAsync(this);
     }
 
@@ -77,13 +81,18 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     public void onMapReady(GoogleMap googleMap) {
         mMapReady = true;
         mGoogleMap = googleMap;
-        // Set the lat/long coordinates for the United States
-        LatLng unitedStates = Utility.UNITED_STATES_COORD;
-        // Set up the camera position
-        CameraPosition target = CameraPosition.builder()
-                .target(unitedStates)
-                .zoom(3)
-                .build();
+        if (initMap) {
+            // Set the lat/long coordinates for the United States
+            LatLng unitedStates = Utility.UNITED_STATES_COORD;
+            // Set up the camera position
+            CameraPosition target = CameraPosition.builder()
+                    .target(unitedStates)
+                    .zoom(3)
+                    .build();
+            // Move the camera to the camera position
+            mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        }
+
         // Add Bay Area Fry's Electronics store location
         for (MarkerOptions frysMarker : Utility.getFrysMarker()) {
             mGoogleMap.addMarker(frysMarker);
@@ -91,9 +100,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         // Add Google HQ marker with launcher icon
         mGoogleMap.addMarker(Utility.getGooglePlexMarker());
         // Set up the initial map view type
-        mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        // Move the camera to the camera position
-        mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
+        //mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
     }
 
     @Override
