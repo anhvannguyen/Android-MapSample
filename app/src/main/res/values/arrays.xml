@@ -1,3 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string-array name="pref_map_type_entry">
+        <item>@string/map_pref_type_normal_entry</item>
+        <item>@string/map_pref_type_satellite_entry</item>
+        <item>@string/map_pref_type_hybrid_entry</item>
+    </string-array>
+
+    <string-array name="pref_map_type_value">
+        <item>@string/map_pref_type_normal_value</item>
+        <item>@string/map_pref_type_satellite_value</item>
+        <item>@string/map_pref_type_hybrid_value</item>
+    </string-array>
 </resources>

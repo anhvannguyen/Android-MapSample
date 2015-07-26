@@ -9,5 +9,16 @@
     <string name="satellite_button_label">Satellite</string>
     <string name="hybrid_button_label">Hybrid</string>
     <string name="center_google_button_label">Center on Google Plex</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+    <!-- Settings -->
+    <string name="map_pref_key">map_pref_key</string>
+    <string name="map_pref_title">Map Type</string>
+    <string name="map_pref_type_normal_entry">Normal</string>
+    <string name="map_pref_type_satellite_entry">Satellite</string>
+    <string name="map_pref_type_hybrid_entry">Hybrid</string>
+    <string name="map_pref_type_normal_value">1</string>
+    <string name="map_pref_type_satellite_value">2</string>
+    <string name="map_pref_type_hybrid_value">4</string>
 
 </resources>
