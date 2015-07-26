@@ -1,5 +1,9 @@
 package me.anhvannguyen.android.mapsample;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -140,5 +144,11 @@ public final class Utility {
 
 
         return fryList;
+    }
+
+    public static int getMapPreference(Context context) {
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        return Integer.parseInt(prefs.getString(context.getString(R.string.map_pref_key),
+                context.getString(R.string.map_pref_type_hybrid_value)));
     }
 }
