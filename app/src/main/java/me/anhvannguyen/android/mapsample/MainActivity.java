@@ -73,7 +73,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             @Override
             public void onClick(View v) {
                 if (mMapReady) {
-                    flyTo(Utility.GOOGLEPLEX_CAMERA);
+                    flyTo(Utility.BAY_AREA_CAMERA);
                 }
             }
         });

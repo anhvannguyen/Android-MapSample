@@ -57,8 +57,15 @@ public final class Utility {
 
     public static final CameraPosition GOOGLEPLEX_CAMERA = CameraPosition.builder()
             .target(GOOGLEPLEX_COORD)
-            .zoom(16.0f)
+            .zoom(10.0f)
             .bearing(90)
+            .tilt(45)
+            .build();
+
+    public static final CameraPosition BAY_AREA_CAMERA = CameraPosition.builder()
+            .target(FRYS_SUNNYVALE)
+            .zoom(10.5f)
+            //.bearing(90)
             .tilt(45)
             .build();
 
