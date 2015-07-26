@@ -7,6 +7,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
+import me.anhvannguyen.android.mapsample.model.Store;
+
 /**
  * Created by anhvannguyen on 7/22/15.
  */
@@ -99,5 +101,44 @@ public final class Utility {
                 .position(GOOGLEPLEX_COORD)
                 .title("Googleplex")
                 .icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher));
+    }
+
+    public static ArrayList<Store> generateFrysList() {
+        ArrayList<Store> fryList = new ArrayList<Store>();
+
+        Store frysCampbell = new Store(
+                "Fry's Campbell",
+                "600 E. Hamilton Ave.\nCampbell, CA 95008",
+                "http://images.frys.com/art/storemaps/images/cmpbl_pic1.jpg",
+                FRYS_CAMPBELL);
+        Store frysFremont = new Store(
+                "Fry's Fremont",
+                "43800 Osgood Rd.\nFremont, CA 94539",
+                "http://images.frys.com/art/storemaps/images/frmnt_pic1.jpg",
+                FRYS_FREMONT);
+        Store frysPaloAlto = new Store(
+                "Fry's Palo Alto",
+                "340 Portage Ave.\nPalo Alto, CA 94306",
+                "http://images.frys.com/art/storemaps/images/pa_pic1.jpg",
+                FRYS_PALO_ALTO);
+        Store frysSanJose = new Store(
+                "Fry's San Jose",
+                "550 E. Brokaw Rd.\nSan Jose, CA 95112",
+                "http://images.frys.com/art/storemaps/images/sj_pic1.jpg",
+                FRYS_SAN_JOSE);
+        Store frysSunnyvale = new Store(
+                "Fry's Sunnyvale",
+                "1077 East Arques Ave.\nSunnyvale, CA 94085",
+                "http://images.frys.com/art/storemaps/images/sv_pic1.jpg",
+                FRYS_SUNNYVALE);
+
+        fryList.add(frysCampbell);
+        fryList.add(frysFremont);
+        fryList.add(frysPaloAlto);
+        fryList.add(frysSanJose);
+        fryList.add(frysSunnyvale);
+
+
+        return fryList;
     }
 }
