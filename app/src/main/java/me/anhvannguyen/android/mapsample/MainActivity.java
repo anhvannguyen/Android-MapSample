@@ -101,6 +101,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         mGoogleMap.addMarker(Utility.getGooglePlexMarker());
         // Set up the initial map view type
         //mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+        mGoogleMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
     }
 
     @Override
