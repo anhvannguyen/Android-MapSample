@@ -79,6 +79,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         });
 
         mMapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
+
         if (savedInstanceState == null) {
             initMap = true;
         }
@@ -111,9 +112,21 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         //mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         mGoogleMap.getUiSettings().setZoomControlsEnabled(true);
+        updateMapType();
 
         addMarkers(mGoogleMap);
         mGoogleMap.setInfoWindowAdapter(new PopupAdapter(MainActivity.this, getLayoutInflater(), frysList));
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateMapType();
+    }
+
+    private void updateMapType() {
+        int mapType = Utility.getMapPreference(MainActivity.this);
+        setMapType(mapType);
     }
 
     @Override
@@ -160,5 +173,23 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
                 .position(position)
                 .title(store.getTitle())
                 .snippet(store.getSnippet()));
+    }
+
+    private void setMapType(int mapType) {
+        if (mGoogleMap != null) {
+            switch (mapType) {
+                case GoogleMap.MAP_TYPE_NORMAL:
+                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+                    break;
+                case GoogleMap.MAP_TYPE_SATELLITE:
+                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+                    break;
+                case GoogleMap.MAP_TYPE_HYBRID:
+                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+                    break;
+                default:
+                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+            }
+        }
     }
 }
