@@ -13,7 +13,13 @@ import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import me.anhvannguyen.android.mapsample.model.Store;
 
 
 public class MainActivity extends ActionBarActivity implements OnMapReadyCallback {
@@ -25,6 +31,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     private boolean mMapReady = false;
     private boolean initMap = false;
     private MapFragment mMapFragment;
+    private HashMap<String, Store> frysList = new HashMap<String, Store>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,14 +101,16 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         }
 
         // Add Bay Area Fry's Electronics store location
-        for (MarkerOptions frysMarker : Utility.getFrysMarker()) {
-            mGoogleMap.addMarker(frysMarker);
-        }
+//        for (MarkerOptions frysMarker : Utility.getFrysMarker()) {
+//            mGoogleMap.addMarker(frysMarker);
+//        }
         // Add Google HQ marker with launcher icon
-        mGoogleMap.addMarker(Utility.getGooglePlexMarker());
+        //mGoogleMap.addMarker(Utility.getGooglePlexMarker());
         // Set up the initial map view type
         //mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        mGoogleMap.setInfoWindowAdapter(new PopupAdapter(getLayoutInflater()));
+
+        addMarkers(mGoogleMap);
+        mGoogleMap.setInfoWindowAdapter(new PopupAdapter(MainActivity.this, getLayoutInflater(), frysList));
     }
 
     @Override
@@ -129,5 +138,22 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     private void flyTo(CameraPosition target)
     {
         mGoogleMap.animateCamera(CameraUpdateFactory.newCameraPosition(target), Utility.FLYBY_DURATION, null);
+    }
+
+    private void addMarkers(GoogleMap googleMap) {
+        ArrayList<Store> frys = Utility.generateFrysList();
+
+        for (Store fry : frys) {
+            frysList.put(addMarkerForModel(googleMap, fry).getId(), fry);
+        }
+    }
+
+    private Marker addMarkerForModel(GoogleMap googleMap, Store store) {
+        LatLng position = store.getLatLng();
+
+        return googleMap.addMarker(new MarkerOptions()
+                .position(position)
+                .title(store.getTitle())
+                .snippet(store.getSnippet()));
     }
 }
