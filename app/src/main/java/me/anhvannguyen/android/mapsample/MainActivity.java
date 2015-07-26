@@ -1,5 +1,6 @@
 package me.anhvannguyen.android.mapsample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
@@ -108,7 +109,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
         //mGoogleMap.addMarker(Utility.getGooglePlexMarker());
         // Set up the initial map view type
         //mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        
+
         mGoogleMap.getUiSettings().setZoomControlsEnabled(true);
 
         addMarkers(mGoogleMap);
@@ -131,6 +132,8 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
             return true;
         }
 
