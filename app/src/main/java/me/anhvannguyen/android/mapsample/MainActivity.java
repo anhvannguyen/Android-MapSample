@@ -38,35 +38,35 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mMapButton = (Button) findViewById(R.id.button_map);
-        mMapButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mMapReady) {
-                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-                }
-            }
-        });
-
-        mSatelliteButton = (Button) findViewById(R.id.button_satellite);
-        mSatelliteButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mMapReady) {
-                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-                }
-            }
-        });
-
-        mHybridButton = (Button) findViewById(R.id.button_hybrid);
-        mHybridButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (mMapReady) {
-                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-                }
-            }
-        });
+//        mMapButton = (Button) findViewById(R.id.button_map);
+//        mMapButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (mMapReady) {
+//                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
+//                }
+//            }
+//        });
+//
+//        mSatelliteButton = (Button) findViewById(R.id.button_satellite);
+//        mSatelliteButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (mMapReady) {
+//                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+//                }
+//            }
+//        });
+//
+//        mHybridButton = (Button) findViewById(R.id.button_hybrid);
+//        mHybridButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (mMapReady) {
+//                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+//                }
+//            }
+//        });
 
         mGooglePlexButton = (Button) findViewById(R.id.google_flyto_button);
         mGooglePlexButton.setOnClickListener(new View.OnClickListener() {
