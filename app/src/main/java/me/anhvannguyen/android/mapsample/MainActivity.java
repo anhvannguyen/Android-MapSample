@@ -68,7 +68,7 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
 //            }
 //        });
 
-        mGooglePlexButton = (Button) findViewById(R.id.google_flyto_button);
+        mGooglePlexButton = (Button) findViewById(R.id.bayarea_flyto_button);
         mGooglePlexButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
