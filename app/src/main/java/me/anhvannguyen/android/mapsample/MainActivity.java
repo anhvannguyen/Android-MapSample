@@ -24,10 +24,7 @@ import me.anhvannguyen.android.mapsample.model.Store;
 
 
 public class MainActivity extends ActionBarActivity implements OnMapReadyCallback {
-    private Button mMapButton;
-    private Button mSatelliteButton;
-    private Button mHybridButton;
-    private Button mGooglePlexButton;
+    private Button mSanJoseFlyToButton;
     private GoogleMap mGoogleMap;
     private boolean mMapReady = false;
     private boolean initMap = false;
@@ -38,38 +35,9 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        mMapButton = (Button) findViewById(R.id.button_map);
-//        mMapButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mMapReady) {
-//                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-//                }
-//            }
-//        });
-//
-//        mSatelliteButton = (Button) findViewById(R.id.button_satellite);
-//        mSatelliteButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mMapReady) {
-//                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
-//                }
-//            }
-//        });
-//
-//        mHybridButton = (Button) findViewById(R.id.button_hybrid);
-//        mHybridButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                if (mMapReady) {
-//                    mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-//                }
-//            }
-//        });
 
-        mGooglePlexButton = (Button) findViewById(R.id.bayarea_flyto_button);
-        mGooglePlexButton.setOnClickListener(new View.OnClickListener() {
+        mSanJoseFlyToButton = (Button) findViewById(R.id.bayarea_flyto_button);
+        mSanJoseFlyToButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (mMapReady) {
@@ -101,15 +69,6 @@ public class MainActivity extends ActionBarActivity implements OnMapReadyCallbac
             // Move the camera to the camera position
             mGoogleMap.moveCamera(CameraUpdateFactory.newCameraPosition(target));
         }
-
-        // Add Bay Area Fry's Electronics store location
-//        for (MarkerOptions frysMarker : Utility.getFrysMarker()) {
-//            mGoogleMap.addMarker(frysMarker);
-//        }
-        // Add Google HQ marker with launcher icon
-        //mGoogleMap.addMarker(Utility.getGooglePlexMarker());
-        // Set up the initial map view type
-        //mGoogleMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         mGoogleMap.getUiSettings().setZoomControlsEnabled(true);
         updateMapType();

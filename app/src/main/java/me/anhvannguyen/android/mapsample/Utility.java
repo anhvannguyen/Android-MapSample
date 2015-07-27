@@ -13,9 +13,6 @@ import java.util.ArrayList;
 
 import me.anhvannguyen.android.mapsample.model.Store;
 
-/**
- * Created by anhvannguyen on 7/22/15.
- */
 public final class Utility {
     public static final int FLYBY_DURATION = 10000;
 

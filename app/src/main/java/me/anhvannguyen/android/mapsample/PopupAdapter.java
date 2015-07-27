@@ -16,9 +16,6 @@ import java.util.HashMap;
 
 import me.anhvannguyen.android.mapsample.model.Store;
 
-/**
- * Created by anhvannguyen on 7/25/15.
- */
 public class PopupAdapter implements GoogleMap.InfoWindowAdapter {
     private View mPopup = null;
     private Context mContext = null;

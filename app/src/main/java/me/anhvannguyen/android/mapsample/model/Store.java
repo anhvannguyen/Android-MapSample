@@ -2,9 +2,6 @@ package me.anhvannguyen.android.mapsample.model;
 
 import com.google.android.gms.maps.model.LatLng;
 
-/**
- * Created by anhvannguyen on 7/25/15.
- */
 public class Store {
     String mTitle;
     String mSnippet;

@@ -11,7 +11,7 @@
     <string name="center_southbay_button_label">Center on South Bay</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
-    <!-- Settings -->
+    <!-- Settings Map Type -->
     <string name="map_pref_key">map_pref_key</string>
     <string name="map_pref_title">Map Type</string>
     <string name="map_pref_type_normal_entry">Normal</string>
