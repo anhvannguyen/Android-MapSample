@@ -52,7 +52,8 @@ public class PopupAdapter implements GoogleMap.InfoWindowAdapter {
         ImageView popupImage = (ImageView) mPopup.findViewById(R.id.popup_imageview);
         Picasso.with(mContext)
                 .load(mStore.get(marker.getId()).getImagePath())
-                .placeholder(R.mipmap.ic_launcher)
+                //.placeholder(R.mipmap.ic_launcher)
+                .error(R.mipmap.ic_launcher)
                 .resize(100, 100)
                 .noFade()
                 .into(popupImage, new MarkerCallback(marker));
