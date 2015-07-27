@@ -13,9 +13,9 @@ Android app to test the use of Google Play Map Service.  A Google Maps API key i
 ###### First Load Screen<br>
 <img src="https://github.com/anhvannguyen/Android-MapSample/blob/master/images/Map_01.png" width="480" height="270" /><br>
 
-###### Marker Before<br>
+###### Standard Marker<br>
 <img src="https://github.com/anhvannguyen/Android-MapSample/blob/master/images/Map_03.png" width="270" height="480" />
 
-###### Marker After<br>
+###### Marker after with multiline and store image<br>
 <img src="https://github.com/anhvannguyen/Android-MapSample/blob/master/images/Map_09.png" width="270" height="480" />
 <img src="https://github.com/anhvannguyen/Android-MapSample/blob/master/images/Map_10.png" width="270" height="480" />
