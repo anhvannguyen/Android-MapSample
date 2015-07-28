@@ -29,38 +29,8 @@ public final class Utility {
 
     public static final LatLng GOOGLEPLEX_COORD = new LatLng(37.411413,-122.0708163);
 
-
-    public static final CameraPosition SAN_JOSE_CAMERA = CameraPosition.builder()
-            .target(SAN_JOSE_USA_COORD)
-            .zoom(17)
-            .bearing(0)
-            .tilt(45)
-            .build();
-
-    public static final CameraPosition LONDON_CAMERA = CameraPosition.builder()
-            .target(LONDON_UK_COORD)
-            .zoom(17)
-            .bearing(90)
-            .tilt(45)
-            .build();
-
-
-    public static final CameraPosition TOKYO_CAMERA = CameraPosition.builder()
-            .target(TOYKO_JAPAN_COORD)
-            .zoom(17)
-            .bearing(90)
-            .tilt(45)
-            .build();
-
-    public static final CameraPosition GOOGLEPLEX_CAMERA = CameraPosition.builder()
-            .target(GOOGLEPLEX_COORD)
-            .zoom(10.0f)
-            .bearing(90)
-            .tilt(45)
-            .build();
-
     public static final CameraPosition BAY_AREA_CAMERA = CameraPosition.builder()
-            .target(FRYS_SUNNYVALE)
+            .target(SAN_JOSE_USA_COORD)
             .zoom(10.5f)
             //.bearing(90)
             .tilt(45)
