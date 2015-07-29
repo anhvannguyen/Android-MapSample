@@ -54,7 +54,7 @@ public class PopupAdapter implements GoogleMap.InfoWindowAdapter {
                 .load(mStore.get(marker.getId()).getImagePath())
                 //.placeholder(R.mipmap.ic_launcher)
                 .error(R.mipmap.ic_launcher)
-                .resize(100, 100)
+                //.resize(100, 100)
                 .noFade()
                 .into(popupImage, new MarkerCallback(marker));
 
