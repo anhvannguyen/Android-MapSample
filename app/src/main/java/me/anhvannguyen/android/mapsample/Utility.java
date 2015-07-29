@@ -14,7 +14,9 @@ import java.util.ArrayList;
 import me.anhvannguyen.android.mapsample.model.Store;
 
 public final class Utility {
-    public static final int FLYBY_DURATION = 10000;
+    // Time in milliseconds
+    // 1000 = 1 second
+    public static final int FLYBY_DURATION = 5000;
 
     public static final LatLng UNITED_STATES_COORD = new LatLng(39.320401, -98.521445);
     public static final LatLng LONDON_UK_COORD = new LatLng(51.504800, -0.127320);
